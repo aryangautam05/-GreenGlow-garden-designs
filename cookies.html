@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenGlow Garden Designs - Cookies Policy</title>
+  <style>
+    /* Root variables */
+    :root {
+      --white: #ffffff;
+      --gray-neutral: #6b7280;
+      --green-glow: #22c55e;
+      --green-glow-light: #a7f3d0;
+      --green-glow-dark: #15803d;
+      --shadow-light: 0 2px 10px rgba(34, 197, 94, 0.15);
+      --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Global resets and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--gray-neutral);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      padding-bottom: 140px; /* room for cookie dialog */
+    }
+    a {
+      color: var(--green-glow);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: var(--green-glow-dark);
+      outline: none;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      font-family: var(--font-heading);
+      margin-top: 0;
+      color: #111827;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 0.75em;
+      text-align: center;
+      color: var(--green-glow-dark);
+    }
+    h2 {
+      font-size: 34px;
+      margin-bottom: 1.25em;
+      font-weight: 700;
+      color: var(--green-glow-dark);
+      border-bottom: 2px solid var(--green-glow-light);
+      padding-bottom: 0.25em;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h3 {
+      font-size: 22px;
+      margin-bottom: 0.8em;
+      color: var(--green-glow-dark);
+    }
+    p {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.75em;
+      color: var(--gray-neutral);
+      font-weight: 400;
+    }
+    ul {
+      max-width: 900px;
+      margin-left: 2rem;
+      margin-bottom: 1.75em;
+      color: var(--gray-neutral);
+    }
+    li {
+      font-weight: 400;
+      margin-bottom: 0.75em;
+    }
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 6rem 2rem;
+    }
+    /* Header and nav */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 9999;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.75rem;
+      color: var(--green-glow-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      user-select: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #374151;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus {
+      background-color: var(--green-glow-light);
+      color: var(--green-glow-dark);
+      outline-offset: 2px;
+    }
+
+    /* Hero section */
+    .hero {
+      padding: 3rem 2rem 4rem 2rem;
+      background: #ecfdf5;
+      border-radius: 1.5rem;
+      margin: 2.5rem auto 4rem auto;
+      max-width: 900px;
+      box-shadow: var(--shadow-light);
+      text-align: center;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #374151;
+      font-weight: 500;
+      margin-top: 0.5em;
+    }
+
+    /* Cookie policy content style */
+    section.cookie-policy {
+      max-width: 1000px;
+      margin: 0 auto 4rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--green-glow-dark);
+      color: var(--white);
+      padding: 2rem 2rem;
+      text-align: center;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 10;
+    }
+    footer address {
+      font-style: normal;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    footer a {
+      color: var(--green-glow-light);
+      font-weight: 700;
+    }
+
+    /* Cookie Consent Dialog */
+    #cookie-consent {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green-glow-light);
+      color: var(--green-glow-dark);
+      padding: 1.5rem 2rem;
+      width: min(100%, 600px);
+      border-radius: 1rem 1rem 0 0;
+      box-shadow: 0 -4px 16px rgba(34, 197, 94, 0.8);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 1rem;
+      z-index: 10000;
+    }
+    #cookie-consent p {
+      flex: 1 1 280px;
+      margin: 0;
+    }
+    #cookie-consent button {
+      background: var(--green-glow-dark);
+      color: var(--white);
+      border: none;
+      border-radius: 2rem;
+      padding: 0.7rem 1.8rem;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+    #cookie-consent button:hover,
+    #cookie-consent button:focus {
+      background: var(--green-glow);
+      outline: none;
+    }
+    #cookie-consent button.decline {
+      background: transparent;
+      border: 2px solid var(--green-glow-dark);
+      color: var(--green-glow-dark);
+    }
+    #cookie-consent button.decline:hover,
+    #cookie-consent button.decline:focus {
+      background: var(--green-glow-dark);
+      color: var(--white);
+      border-color: var(--green-glow-dark);
+      outline: none;
+    }
+
+    @media (max-width: 580px) {
+      #cookie-consent {
+        flex-direction: column;
+        align-items: stretch;
+        font-size: 0.95rem;
+      }
+      #cookie-consent p {
+        flex: unset;
+        margin-bottom: 1rem;
+      }
+      #cookie-consent button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 1.1rem;
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 420px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav aria-label="Primary navigation">
+      <div class="logo" tabindex="0">GreenGlow</div>
+      <div class="nav-links">
+        <a href="index.html" tabindex="0">Home</a>
+        <a href="privacy.html" tabindex="0">Privacy</a>
+        <a href="terms.html" tabindex="0">Terms & Conditions</a>
+        <a href="cookies.html" tabindex="0" aria-current="page">Cookies</a>
+        <a href="contact.html" tabindex="0">Contact us </a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" role="banner" aria-label="Cookies Policy Intro">
+      <h1>Cookies Policy</h1>
+      <p>Welcome to GreenGlow Garden Designs’ comprehensive Cookies Policy. This detailed statement explains how we utilize cookies and similar tracking technologies on our website to improve your experience, analyze usage, and provide personalized content.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="What Are Cookies">
+      <h2>What Are Cookies?</h2>
+      <p>Cookies are small text files stored on your device by websites you visit. They enable the website to recognize your device and store information such as preferences or login status.</p>
+      <p>There are different types of cookies used for various purposes:</p>
+      <ul>
+        <li><strong>Session Cookies:</strong> These are temporary cookies erased once you close your browser.</li>
+        <li><strong>Persistent Cookies:</strong> Remain on your device for a set period, remembering preferences for your next visit.</li>
+        <li><strong>First-Party Cookies:</strong> Set by our website itself to store your settings and session information.</li>
+        <li><strong>Third-Party Cookies:</strong> Set by external services we integrate for analytics, advertising, or customer experience enhancement.</li>
+      </ul>
+    </section>
+
+    <section class="cookie-policy" aria-label="How We Use Cookies">
+      <h2>How We Use Cookies</h2>
+      <p>Our use of cookies enables us to provide you with a seamless, efficient, and personalized browsing and gardening service experience. Cookies help us to:</p>
+      <ul>
+        <li>Remember your privacy preferences and cookie consent choices.</li>
+        <li>Ensure secure logins and maintain session continuity.</li>
+        <li>Analyze user behavior and website performance to improve service quality.</li>
+        <li>Deliver personalized content, offers, and advertisements relevant to your interests.</li>
+        <li>Enhance website functionality such as language preferences, shopping cart contents, and interactive features.</li>
+      </ul>
+      <p>Each cookie serves a specific function, and you can choose your preferred level of cookie acceptance.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Types of Cookies We Use">
+      <h2>Types of Cookies We Use</h2>
+
+      <h3>Essential Cookies</h3>
+      <p>These cookies are vital for the operation of our website. They support features like page navigation, user authentication, and security operations. Disabling these could impact your use of the site.</p>
+
+      <h3>Performance and Analytics Cookies</h3>
+      <p>These cookies collect information on how visitors use our site, such as pages visited and errors encountered. This information helps us understand user engagement and optimize the site’s performance.</p>
+
+      <h3>Functionality Cookies</h3>
+      <p>Functionality cookies allow our website to remember choices you’ve made, such as your preferred language or region, improving your experience upon return visits.</p>
+
+      <h3>Advertising and Targeting Cookies</h3>
+      <p>Advertising cookies track user behavior across websites to deliver relevant advertisements tailored to your interests, enhancing your experience but also for marketing purposes.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Third-Party Cookies and Services">
+      <h2>Third-Party Cookies and Services</h2>
+      <p>We may employ third-party services such as Google Analytics, social media platforms, and advertising networks, which place their own cookies through our site.</p>
+      <p>These third parties operate under their own privacy policies, and we encourage you to review them to understand their data handling practices.</p>
+      <p>We do not control these third-party cookies but ensure our partners adhere to strict privacy standards.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Managing Cookies">
+      <h2>Managing and Controlling Cookies</h2>
+      <p>You have the right to control cookies. You can accept or decline cookies using the cookie consent dialog below, or by adjusting your web browser settings.</p>
+      <p>Most browsers allow you to manage cookie settings through preferences or settings menus where you can:</p>
+      <ul>
+        <li>View what cookies are stored on your device.</li>
+        <li>Delete cookies individually or in bulk.</li>
+        <li>Block all or third-party cookies.</li>
+      </ul>
+      <p>Please note blocking cookies may limit some website functions and personalized experiences.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Cookie Duration and Expiry">
+      <h2>Cookie Duration and Expiry</h2>
+      <p>The lifespan of cookies varies by type:</p>
+      <ul>
+        <li><strong>Session Cookies:</strong> Expire once you close your browser.</li>
+        <li><strong>Persistent Cookies:</strong> Can remain for days, months or even years depending on their function.</li>
+      </ul>
+      <p>We review and update our cookie usage periodically for optimal performance and compliance.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Privacy Policy Relationship">
+      <h2>Relationship with Our Privacy Policy</h2>
+      <p>This Cookies Policy complements our broader <a href="privacy.html">Privacy Policy</a> and should be read together for a complete understanding of how we handle your data.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Use of Your Data">
+      <h2>Use of Your Data Collected Through Cookies</h2>
+      <p>Data gathered through cookies helps us tailor your experience, provide targeted marketing communications, and measure the effectiveness of our campaigns and services.</p>
+      <p>This includes aggregated, anonymized usage data as well as personalized identifiers where consent is provided.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Children's Cookies Privacy">
+      <h2>Children’s Privacy and Cookies</h2>
+      <p>We do not knowingly use cookies to collect information from children under the age of 13 without parental consent and actively discourage minors from using our services unsupervised.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Legal Bases for Processing">
+      <h2>Legal Bases for Processing Cookies and Data</h2>
+      <p>Depending on your jurisdiction, cookie use and data processing are based on your consent, contract necessity, or legitimate interests.</p>
+      <p>We always strive to comply with applicable legal frameworks such as GDPR and CCPA, offering clear information and control tools.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="California Consumer Privacy Act (CCPA)">
+      <h2>California Consumer Privacy Act (CCPA) Specifics</h2>
+      <p>California residents have distinct privacy rights, including:</p>
+      <ul>
+        <li>Right to opt-out of sale of personal information.</li>
+        <li>Right to access and request deletion of your data.</li>
+        <li>Right to non-discrimination for exercising privacy rights.</li>
+      </ul>
+      <p>We comply with CCPA and provide mechanisms to exercise your rights.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="General Data Protection Regulation (GDPR)">
+      <h2>General Data Protection Regulation (GDPR)</h2>
+      <p>Residents of the European Union enjoy enhanced rights under GDPR, including:</p>
+      <ul>
+        <li>Explicit informed consent for cookie usage.</li>
+        <li>Rights to access, correct, and delete personal data.</li>
+        <li>Right to withdraw consent at any time.</li>
+        <li>Right to object to data processing and profiling.</li>
+        <li>Rights to data portability.</li>
+      </ul>
+      <p>GreenGlow complies fully with GDPR provisions.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Data Security and Confidentiality">
+      <h2>Data Security and Confidentiality</h2>
+      <p>We implement industry-standard security technologies and organizational practices to protect cookie data and related personal information from unauthorized access or disclosure.</p>
+      <p>Our team regularly reviews and updates security protocols to stay ahead of potential threats.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Cookies and Browser Settings">
+      <h2>Cookies and Browser Settings</h2>
+      <p>You may use your browser settings to delete cookies, block particular types, or be notified when cookies are set.</p>
+      <p>Instructions to manage cookies can generally be found in your browser’s “Preferences” or “Settings” menu.</p>
+      <p>Be aware that disabling cookies might affect website usability and limit features.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="Updates to This Cookies Policy">
+      <h2>Updates to This Cookies Policy</h2>
+      <p>We may update this policy to reflect changes in our cookie practices, legal changes, or technological advances.</p>
+      <p>Updates will be posted with the revision date. We encourage review of the Cookies Policy at regular intervals.</p>
+    </section>
+
+    <section class="cookie-policy" aria-label="How to Contact Us">
+      <h2>Contact Us</h2>
+      <p>For any questions or concerns related to our Cookies Policy or practices, please contact us by email or phone:</p>
+      <ul>
+        <li>Email: <a href="mailto:cookies@greenglow.com">cookies@greenglow.com</a></li>
+        <li>Phone: <a href="tel:+12125551234">+1 (212) 555-1234</a></li>
+        <li>Address: 33 3rd Ave, New York, NY 10003, USA</li>
+      </ul>
+      <p>We strive to respond promptly and transparently to all inquiries and ensure your data privacy.</p>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <address>
+      33 3rd Ave, New York, NY 10003, USA<br />
+      Phone: <a href="tel:+12125551234" aria-label="Call GreenGlow Garden Designs at +1 212 555 1234">+1 (212) 555 1234</a>
+    </address>
+    &copy; 2024 GreenGlow Garden Designs. All rights reserved.
+  </footer>
+
+  <div id="cookie-consent" role="dialog" aria-live="polite" aria-label="Cookie consent dialog">
+    <p>Our website uses cookies to enhance your experience. By clicking Accept, you consent to our use of cookies. You may decline if you prefer.</p>
+    <button id="accept-cookies" type="button">Accept</button>
+    <button id="decline-cookies" class="decline" type="button">Decline</button>
+  </div>
+
+  <script>
+    const consentDialog = document.getElementById('cookie-consent');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    function setCookie(name, value, days) {
+      let expires = "";
+      if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+      }
+      document.cookie = name + "=" + (value || "")  + expires + "; path=/; SameSite=Lax";
+    }
+
+    function getCookie(name) {
+      const nameEQ = name + "=";
+      const ca = document.cookie.split(';');
+      for(let i=0;i < ca.length;i++) {
+        let c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length,c.length);
+      }
+      return null;
+    }
+
+    function hideConsentDialog() {
+      consentDialog.style.display = 'none';
+    }
+
+    window.addEventListener('load', () => {
+      const cookieConsent = getCookie('greenglow_cookie_consent');
+      if (cookieConsent === 'accepted' || cookieConsent === 'declined') {
+        hideConsentDialog();
+      }
+    });
+
+    acceptBtn.addEventListener('click', () => {
+      setCookie('greenglow_cookie_consent', 'accepted', 365);
+      hideConsentDialog();
+      // Initialize any tracking scripts if needed
+    });
+
+    declineBtn.addEventListener('click', () => {
+      setCookie('greenglow_cookie_consent', 'declined', 365);
+      hideConsentDialog();
+      // Disable tracking scripts if needed
+    });
+  </script>
+</body>
+</html>
