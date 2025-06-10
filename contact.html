@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenGlow Garden Designs - Contact Us</title>
+  <style>
+    /* Root variables */
+    :root {
+      --white: #ffffff;
+      --gray-neutral: #6b7280;
+      --green-glow: #22c55e;
+      --green-glow-light: #a7f3d0;
+      --green-glow-dark: #15803d;
+      --shadow-light: 0 2px 10px rgba(34, 197, 94, 0.15);
+      --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      --font-body: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Global resets and base styles */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      color: var(--gray-neutral);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: var(--green-glow);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: var(--green-glow-dark);
+      outline: none;
+    }
+    h1,h2,h3,h4,h5,h6 {
+      font-family: var(--font-heading);
+      margin-top: 0;
+      color: #111827;
+      font-weight: 700;
+    }
+    h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 0.75em;
+      text-align: center;
+      color: var(--green-glow-dark);
+    }
+    h2 {
+      font-size: 34px;
+      margin-bottom: 1.25em;
+      font-weight: 700;
+      color: var(--green-glow-dark);
+      border-bottom: 2px solid var(--green-glow-light);
+      padding-bottom: 0.25em;
+      max-width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h3 {
+      font-size: 22px;
+      margin-bottom: 0.8em;
+      color: var(--green-glow-dark);
+    }
+    p {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.75em;
+      color: var(--gray-neutral);
+      font-weight: 400;
+    }
+    ul {
+      max-width: 900px;
+      margin-left: 2rem;
+      margin-bottom: 1.75em;
+      color: var(--gray-neutral);
+    }
+    li {
+      font-weight: 400;
+      margin-bottom: 0.75em;
+    }
+    label {
+      font-weight: 600;
+      color: var(--green-glow-dark);
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.75rem;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      color: var(--gray-neutral);
+      background: var(--white);
+      margin-bottom: 1.5rem;
+      transition: border-color 0.3s ease;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--green-glow);
+      box-shadow: 0 0 4px var(--green-glow-light);
+    }
+    textarea {
+      min-height: 160px;
+      resize: vertical;
+    }
+    button {
+      background-color: var(--green-glow-dark);
+      color: var(--white);
+      font-weight: 700;
+      padding: 1rem 2.5rem;
+      font-size: 1.25rem;
+      border: none;
+      border-radius: 9999px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(34, 197, 94, 0.6);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: block;
+      margin: 1rem auto 3rem auto;
+      user-select: none;
+    }
+    button:hover,
+    button:focus {
+      background-color: var(--green-glow);
+      outline: none;
+      transform: scale(1.05);
+    }
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto 4rem auto;
+      padding: 0 2rem;
+    }
+    /* Header and nav */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      z-index: 9999;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1.2rem 2rem;
+    }
+    .logo {
+      font-weight: 800;
+      font-size: 1.75rem;
+      color: var(--green-glow-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      user-select: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: #374151;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a:focus {
+      background-color: var(--green-glow-light);
+      color: var(--green-glow-dark);
+      outline-offset: 2px;
+    }
+    /* Topics & content blocks */
+    section.topic {
+      max-width: 900px;
+      margin: 0 auto 3.5rem auto;
+      padding: 0 1rem;
+    }
+    /* Footer */
+    footer {
+      background: var(--green-glow-dark);
+      color: var(--white);
+      padding: 3rem 2rem;
+      text-align: center;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      user-select: none;
+    }
+    footer address {
+      font-style: normal;
+      margin-bottom: 1rem;
+    }
+    footer a {
+      color: var(--green-glow-light);
+      font-weight: 700;
+      text-decoration: underline;
+    }
+    /* Responsive */
+    @media (max-width: 720px) {
+      h1 {
+        font-size: 36px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+      .hero p {
+        font-size: 1.1rem;
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 420px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.25rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      h1 {
+        font-size: 28px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      button {
+        width: 100%;
+        margin: 1rem 0 3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <nav aria-label="Primary navigation">
+    <div class="logo" tabindex="0">GreenGlow</div>
+    <div class="nav-links">
+      <a href="index.html" tabindex="0">Home</a>
+      <a href="privacy.html" tabindex="0">Privacy Policy</a>
+      <a href="terms.html" tabindex="0">Terms & Conditions</a>
+      <a href="cookies.html" tabindex="0" >Cookies Policy</a>
+      <a href="contact.html" tabindex="0"aria-current="page">Contact us </a>
+    </div>
+  </nav>
+</header>
+<main>
+<section class="hero" role="banner" aria-label="Contact Us Intro">
+  <h1>Contact GreenGlow Garden Designs</h1>
+  <p>We're delighted to hear from you! Use the sections below to reach out with inquiries, comments, service requests, or ideas. Your connection helps us cultivate extraordinary garden experiences.</p>
+</section>
+
+<section class="topic" aria-label="Contact Information">
+  <h2>Contact Information</h2>
+  <p>We provide multiple convenient channels for communication. Select what suits you best:</p>
+  <ul>
+    <li><strong>Email:</strong> <a href="mailto:info@greenglow.com">info@greenglow.com</a> – For detailed inquiries or documentation.</li>
+    <li><strong>Phone:</strong> <a href="tel:+12125551234">+1 (212) 555-1234</a> – Speak directly with our customer service or book your consultation.</li>
+    <li><strong>Office Address:</strong> 33 3rd Ave, New York, NY 10003, USA – Visit us by appointment for personalized consultations.</li>
+  </ul>
+</section>
+
+<section class="topic" aria-label="Business Hours and Availability">
+  <h2>Business Hours and Availability</h2>
+  <p>We operate Monday through Friday, 9:00 AM to 6:00 PM, and Saturdays 10:00 AM to 4:00 PM. We are closed on Sundays and all major holidays.</p>
+  <p>Outside of these hours, you can leave a message via email or voicemail, and we will respond promptly on the next business day.</p>
+</section>
+
+<section class="topic" aria-label="How to Schedule a Consultation">
+  <h2>How to Schedule a Consultation</h2>
+  <p>Scheduling a consultation with GreenGlow is easy to start the journey toward your dream garden:</p>
+  <ul>
+    <li>Contact us via phone or email to request availability.</li>
+    <li>Provide some details about your property and garden preferences.</li>
+    <li>We will confirm the consultation date, time, and necessary preparations.</li>
+    <li>An expert designer will visit your site or conduct a virtual consultation.</li>
+    <li>You will receive a personalized garden design proposal and quote.</li>
+  </ul>
+  <p>Consultations provide valuable insights and are the first step to realizing your outdoor vision.</p>
+</section>
+
+<section class="topic" aria-label="Frequently Asked Questions (FAQs)">
+  <h2>Frequently Asked Questions (FAQs)</h2>
+  <h3>Do you service areas outside New York?</h3>
+  <p>Primarily, we serve New York City and nearby areas. For projects farther afield, please contact us to discuss possibilities.</p>
+
+  <h3>Can you help with ecological or sustainable garden designs?</h3>
+  <p>Absolutely! Ecological stewardship guides many of our designs incorporating native plants, water conservation, and wildlife habitat features.</p>
+
+  <h3>What is your process for garden maintenance?</h3>
+  <p>We offer flexible maintenance packages tailored to your garden’s size and needs, from weekly visits to seasonal care.</p>
+
+  <h3>How long do garden design projects take?</h3>
+  <p>Project duration varies by scope but typically ranges from 4-12 weeks from design to installation.</p>
+
+  <h3>Can you work with limited outdoor spaces?</h3>
+  <p>Yes, we specialize in maximizing small urban gardens, balcony designs, and container planting.</p>
+</section>
+
+<section class="topic" aria-label="Customer Testimonials and Stories">
+  <h2>Customer Testimonials and Stories</h2>
+  <p>Our proudest achievements are ongoing client relationships and garden transformations:</p>
+  <p><em>“GreenGlow brought our neglected backyard to life. Their attention to detail and sustainable approach is unmatched.” – Sarah P.</em></p>
+  <p><em>“The seasonal planting service adds magic every time. Reliable and creative team!” – Mark L.</em></p>
+  <p>We invite you to become part of our family of delighted clients.</p>
+</section>
+
+<section class="topic" aria-label="Community Engagement and Sustainability">
+  <h2>Community Engagement and Sustainability</h2>
+  <p>We actively contribute to local green initiatives, supporting community gardens, urban renewal projects, educational workshops, and pollinator pathways.</p>
+  <p>Environmental sustainability directs every aspect of our work — from minimizing chemical usage to selecting eco-friendly materials.</p>
+</section>
+
+<section class="topic" aria-label="Environmental Stewardship and Future Vision">
+  <h2>Environmental Stewardship and Future Vision</h2>
+  <p>Our commitment extends beyond aesthetics — fostering ecosystems, conserving resources, and innovating for greener urban living.</p>
+  <p>We continuously evolve with advances in sustainable gardening, smart irrigation, renewable energy integration, and biodiversity support.</p>
+</section>
+
+<section class="topic" aria-label="Online Inquiry Form">
+  <h2>Send Us a Message</h2>
+  <form action="#" method="POST" aria-label="Contact form" style="max-width:600px; margin: 0 auto;">
+    <label for="name">Full Name<span aria-hidden="true" style="color:red;">*</span></label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" />
+    
+    <label for="email">Email Address<span aria-hidden="true" style="color:red;">*</span></label>
+    <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" />
+    
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" name="phone" placeholder="+1 212 555 1234" />
+    
+    <label for="subject">Subject<span aria-hidden="true" style="color:red;">*</span></label>
+    <input type="text" id="subject" name="subject" placeholder="Subject of your message" required aria-required="true" />
+    
+    <label for="message">Message<span aria-hidden="true" style="color:red;">*</span></label>
+    <textarea id="message" name="message" placeholder="Write your message here..." required aria-required="true"></textarea>
+    
+    <button type="submit" aria-label="Send message">Send Message</button>
+  </form>
+</section>
+
+<section class="topic" aria-label="Privacy and Security of Your Data">
+  <h2>Your Data Privacy and Security</h2>
+  <p>We safeguard all information provided through our contact channels using industry best practices including encryption, access controls, and secure data management.</p>
+  <p>Your contact details are not shared with third parties without consent and are used strictly for communication related to your inquiry.</p>
+</section>
+
+<section class="topic" aria-label="Accessibility and Support">
+  <h2>Accessibility and Support</h2>
+  <p>We strive to ensure our website and communications are accessible to all users. If you require assistance or have accessibility concerns, please do not hesitate to reach out.</p>
+  <p>Our support team is trained to provide inclusive service and clarify any queries.</p>
+</section>
+
+<section class="topic" aria-label="Appointment and Site Visit Information">
+  <h2>Appointment and Site Visit Information</h2>
+  <p>For consultations involving on-site visits, please prepare the following to maximize productivity:</p>
+  <ul>
+    <li>Property boundaries and dimensions.</li>
+    <li>Photos or plans of current site condition.</li>
+    <li>Your gardening goals and inspirations.</li>
+    <li>Preferred budget and timeline.</li>
+  </ul>
+  <p>Our team will arrive punctually and conduct a thorough evaluation to provide the best possible advice and proposal.</p>
+</section>
+
+<section class="topic" aria-label="Feedback and Continuous Improvement">
+  <h2>Feedback and Continuous Improvement</h2>
+  <p>We welcome your feedback and use it to improve our services and communication.</p>
+  <p>After engagements, we may request your input on satisfaction and suggestions to enhance your experience.</p>
+  <p>Your voice is instrumental in shaping GreenGlow's future growth.</p>
+</section>
+
+<section class="topic" aria-label="FAQs About Contacting Us">
+  <h2>FAQs About Contacting Us</h2>
+  <h3>How quickly will you respond to my inquiry?</h3>
+  <p>We aim to respond within 1-2 business days during normal working hours, sometimes sooner depending on volume.</p>
+
+  <h3>Can I meet your designers in person?</h3>
+  <p>Yes, we welcome in-person consultations by appointment at our office or project sites.</p>
+
+  <h3>Do you provide consultations virtually?</h3>
+  <p>Absolutely, virtual consultations via video call are available for convenience.</p>
+
+  <h3>What information should I provide when contacting you?</h3>
+  <p>Provide details about your garden, desired services, and any questions or special considerations.</p>
+</section>
+
+<section class="topic" aria-label="Contact Policies">
+  <h2>Contact and Communication Policies</h2>
+  <p>GreenGlow respects your time and privacy:</p>
+  <ul>
+    <li>We do not send unsolicited communications.</li>
+    <li>Sensitive information should not be sent via unsecure channels.</li>
+    <li>We retain communication records only as necessary for service provisions and legal compliance.</li>
+  </ul>
+</section>
+
+<section class="topic" aria-label="Community Engagement and Local Support">
+  <h2>Community Engagement and Local Support</h2>
+  <p>GreenGlow actively supports local community gardening projects and environmental education.</p>
+  <p>We encourage customer involvement in community programs to foster shared green spaces with lasting impact.</p>
+</section>
+
+<section class="topic" aria-label="Sustainability Initiatives">
+  <h2>Sustainability Initiatives</h2>
+  <p>Our commitment to sustainability includes environmentally responsible service practices, promoting native planting, water conservation, and reducing waste.</p>
+  <p>Contact us to learn how we can integrate sustainable solutions tailored to your garden and property.</p>
+</section>
+
+</main>
+<footer role="contentinfo">
+  <address>
+    33 3rd Ave, New York, NY 10003, USA<br />
+    Phone: <a href="tel:+12125551234" aria-label="Call GreenGlow Garden Designs at +1 212 555 1234">+1 (212) 555 1234</a>
+  </address>
+  &copy; 2024 GreenGlow Garden Designs. All rights reserved.
+</footer>
+</body>
+</html>
